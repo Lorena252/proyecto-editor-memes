@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="generador-memes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>GENERADOR DE MEMES</title>
+</head>
+<body>
+    
+<header>
+<h1 class="titulo-principal">GENERADOR DE MEMES</h1>
+<div class="botones-principales">
+<button class="boton-imagen"> <i class="fa-solid fa-file-image"></i>Imagen</button>
+<button class="boton-texto"> <i class="fa-solid fa-a"></i>Texto</button>
+<button class="boton-modo"> <i class="fa-solid fa-lightbulb"></i>Modo oscuro</button>
+</div>
+</header>
+
+<div class="caja-general">
+    <div class="caja-interior">
+        <p class="top">TOP TEXT</p>
+        <!-- <div class="caja-imagen">
+
+        </div> -->
+       <p class="bottom"> BOTTOM TEXT</p>
+    </div>
+
+<div class="boton-descargar"><button class="boton-descarga"><i class="fa-solid fa-download"></i> Descargar meme </button></div>
+
+<section class="imagen">
+  <div> 
+    <h2 class="titulo-imagen">IMAGEN</h2> 
+    <!-- <i class="fa-solid fa-x"></i> -->
+<h3 class="titulo-url">URL </h3>
+<input type="text"  class="url-input">
+</div>
+
+    <!-- <h3 class="titulo-fondo">FONDO</h3> -->
+
+ <h3>FONDO</h3>
+<div  class="botones-fondo">
+    <button class="fondo-boton">
+           <input  type="color" id="blend-mode-color-input" value="#FFFFF" class="circulo"> 
+             <span id="blend-mode-color">#FFFFF</span>
+    </button>
+ 
+  
+    <button class="boton-ninguno">Ninguno</button>
+
+     </div>
+
+    <h3 class="titulo-filtros">FILTROS</h3>
+    <div class="titulo-slider">
+        <label for="brillo">BRILLO</label>
+   <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider"><label for="opacidad">OPACIDAD</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider">
+<label for="contraste">CONTRASTE</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider" >
+<label for="desenfoque">DESENFOQUE</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider" >
+<label for="escala-de-grises">ESCALA DE GRISES</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider" >
+<label for="sepia">SEPIA</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider">
+<label for="hije">HIJE</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider">
+<label for="saturado">SATURADO</label>
+<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+</div>
+<div class="titulo-slider" >
+ <label for="negativo">NEGATIVO</label>
+ <input type="range" id="bright ess-slider" min="0" max="1" value="1" step="0.1">
+</div>
+
+
+<button class="boton-filtros">Reestablecer filtros</button>
+</section>
+
+</div>
+  
+
+<section id="texto">
+<p>SUPERIOR</p>
+<input type="text" class="caja-superior">
+<div class="caja-uno">
+<input type="checkbox" id="superior">
+<label for="superior" >Sin texto superior</label>
+ </div>   
+ 
+ <p>INFERIOR</p>
+<input type="text" class="caja-inferior">
+<div class="caja-uno">
+<input type="checkbox" id="inferior">
+<label for="inferior" >Sin texto inferior</label>
+ </div>   
+ 
+ <p>FUENTE</p>
+<div class="impact"> 
+    <select name="familia-fuentes" id="impacto">impact
+        <option value="Arial">Arial</option>
+        <option value="American Typewriter">American Typewriter</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Didot ">Didot </option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Bradley Hand">Bradley Hand</option>
+        <option value="Monaco ">Monaco </option>
+        <option value="Tahoma ">Tahoma </option>
+</select>
+<div>
+<input type="number" name="tamaños-fuente" id="tamaños-fuentes" min="10" max="50">
+<button class="boton-align"><i class="fa-solid fa-align-left"></i></button>
+<button class="boton-align"><i class="fa-solid fa-align-center"></i></button>
+<button class="boton-align"><i class="fa-solid fa-align-right"></i></button>
+</div>
+
+<h3>COLOR</h3>
+    <button class="color-boton">
+        <input  type="color" id="blend-mode-color-input" value="#FFFFF" class="circulo"> 
+          <span id="blend-mode-color"></span>
+</button>
+
+
+
+
+
+
+
+
+
+<!-- <input type="fuentes" id="collapside-impact">
+<label for="collapside-impact">Impact</label>
+<div class="collapside-text"> -->
+
+</div>
+</div>
+</section>
+
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
