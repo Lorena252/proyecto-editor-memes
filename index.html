@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>GENERADOR DE MEMES</title>
 </head>
-<body>
+<body class="dark-theme">
     
                                  <!-- -------------------------------------------
                                              HEADER
@@ -18,7 +18,7 @@
 
 
 <header>
-<h1 class="titulo-principal">GENERADOR DE MEMES</h1>
+<h1 class="titulo-principal">Generador de Memes</h1>
 <div class="caja-btn-principales">
 <button class="btn-imagen" id="imagen-btn-caja" > 
     <i class="fa-solid fa-file-image"></i>Imagen</button>
@@ -26,12 +26,12 @@
 <button type="button" class="btn-texto" id=""> 
   <i class="fa-solid fa-a"></i>Texto</button>
 
-<button type="button" class="btn-modo" id="theme-dark" >
+<button type="button" class="btn-modo theme-dark" id="theme-dark"  aria-label="modo-oscuro">
   <i class="fa-solid fa-lightbulb"></i>Modo oscuro</button>
 
-  <button type="button" class="btn-modo" id="light-theme">
-    <i class="fas fa-lightbulb button-icon-text"></i>Modo claro
-  </button>
+  <!-- <button type="button" class="btn-modo light-theme" id="light-theme" >
+    <i class="fas fa-lightbulb button-icon-text" aria-label="modo-claro"></i>Modo claro
+  </button> -->
 </div>
 </header>
 
@@ -43,28 +43,28 @@
   <main>                              
 <div class="caja-general">
     <div class="caja-interior-meme">
-        <p id="top-texto">TOP TEXT</p>
+        <h1 id="top-texto">TOP TEXT</h1>
         <img src="" alt="" id="meme" class="meme">
         <!-- </div>  -->
-       <p id="bottom-texto"> BOTTOM TEXT</p>
+       <h1 id="bottom-texto"> BOTTOM TEXT</h1>
     </div>
  <!-- <div class="boton-descargar">  -->
 
-   <button type= "button" value="boton-descaragr" class="boton-descargar"><i class="fa-solid fa-download"></i> Descargar meme </button>
+   <button type= "button" value="boton-descaragr" class="btn-descargar"><i class="fa-solid fa-download"></i> Descargar meme </button>
  <!-- </div>  -->
-
+</main>
 
 
                                           <!-- -------------------------------------------
                                                       SECCION-EDICION-IMAGEN
                                             ------------------------------------------ -->
  <aside id="primera-columna">
-<section  class="caja-vertical" id="imagen">
-  <div> 
-    <h1 class="titulo-imagen">IMAGEN</h1> 
-  <button type= "button" class="boton-cerrar">
+    <button  type= "button" class="btn-cerrar">
      <i class="fa-solid fa-x"></i>
   </button>
+<section  class="caja-vertical" id="imagen">
+  <div> 
+    <h1 class="titulo-imagen-texto">IMAGEN</h1> 
 <h3 class="titulo-url">URL </h3>
 <input type="text"  id="url-input">
 </div> 
@@ -72,13 +72,12 @@
                                            <!-- ----------------------------------
                                                     EDICION-FONDO
                                           -------------------------------- -->
-<!-- <button class="fondo-boton"> -->  <!-- </button> -->
   <p>FONDO</p>
 <div  class="boton-fondo">
-           <input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo"> 
-  <span id="blend-mode-color" class="texto-f">#FFFFFF</span> 
+<input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo"> 
+<span id="blend-mode-color" class="texto-f">#FFFFFF</span> 
 
-  <div class="blend-mode-uno">
+<div class="blend-mode-uno">
      <select  id="blend-mode-color" class="modos-blend">
        <option value="unset">Ninguno</option>
        <option value="lighten">Aclarar</option>
@@ -88,64 +87,64 @@
        <option value="multiply">Multiplicar</option>
      </select>
   </div>
-    </div>  
+</div>  
                                                 <!-- --------------------------------------------
                                                             EDICION-FILTROS
                                                 ----------------------------------------------- -->
-    <p class="titulo-filtros">FILTROS</p>
-    <div class="caja-filtros-opciones">
-    <div class="caja-slider">
-        <label for="brillo">BRILLO</label> <br>
-   <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
-</div>
-<div class="caja-slider"><label for="opacidad">OPACIDAD</label> <br>
-<input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
+  <div class="caja-filtros-opciones"></div>
+      <p class="titulo-filtros">FILTROS</p>
+        <div class="caja-slider"></div>
+      <label for="brillo">BRILLO</label> <br>
+      <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
 </div>
 <div class="caja-slider">
-<label for="contraste" class="titulo-slider" >CONTRASTE</label> <br>
-<input type="range" id="brightness-slider" min="100" max="1000" value="100">
-</div>
-<div class="caja-slider" >
-<label for="desenfoque" class="titulo-slider">DESENFOQUE</label> <br>
-<input type="range" id="brightness-slider" min="0" max="10" value="0" step="0.1">
-</div>
-<div class="caja-slider" >
-<label for="escala-de-grises" class="titulo-slider" >ESCALA DE GRISES</label> <br>
-<input type="range" id="brightness-slider" min="0" max="100" value="0" >
-</div>
-<div class="caja-slider" >
-<label for="sepia" class="titulo-slider">SEPIA</label> <br>
-<input type="range" id="brightness-slider" min="0" max="100" value="0">
+   <label for="opacidad">OPACIDAD</label> <br>
+  <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
 </div>
 <div class="caja-slider">
-<label for="hije"class="titulo-slider" >HIJE</label> <br>
-<input type="range" id="brightness-slider" min="0" max="360" value="0">
+  <label for="contraste" class="titulo-slider" >CONTRASTE</label> <br>
+  <input type="range" id="brightness-slider" min="100" max="1000" value="100">
 </div>
-<div class="caja-slider">
-<label for="saturado" class="titulo-slider">SATURADO</label> <br>
-<input type="range" id="brightness-slider" min="100" max="1000" value="100" step="10">
+ <div class="caja-slider" >
+  <label for="desenfoque" class="titulo-slider">DESENFOQUE</label> <br>
+  <input type="range" id="brightness-slider" min="0" max="10" value="0" step="0.1">
 </div>
 <div class="caja-slider" >
- <label for="negativo" class="titulo-slider">NEGATIVO</label> <br>
- <input type="range" id="brightness-slider" min="0" max="1" value="0" step="0.1">
+  <label for="escala-de-grises" class="titulo-slider" >ESCALA DE GRISES</label> <br>
+ <input type="range" id="brightness-slider" min="0" max="100" value="0" >
 </div>
+<div class="caja-slider" >
+  <label for="sepia" class="titulo-slider">SEPIA</label> <br>
+  <input type="range" id="brightness-slider" min="0" max="100" value="0">
+</div>
+<div class="caja-slider">
+  <label for="hije"class="titulo-slider" >HIJE</label> <br>
+  <input type="range" id="brightness-slider" min="0" max="360" value="0">
+</div>
+<div class="caja-slider">
+  <label for="saturado" class="titulo-slider">SATURADO</label> <br>
+  <input type="range" id="brightness-slider" min="100" max="1000" value="100" step="10">
+</div>
+<div class="caja-slider" >
+  <label for="negativo" class="titulo-slider">NEGATIVO</label> <br>
+  <input type="range" id="brightness-slider" min="0" max="1" value="0" step="0.1">
+</div>
+</div>
+<button type="button" class="btn-filtros" value="Reestablecer fitros">Reestablecer filtros</button>
 </div>
 
-
- <button type="Restablecer filtros" class="boton-filtros" value="Reestablecer fitros">Reestablecer filtros</button>
-</div>
 </section>
 
-</aside> 
-  </main>
+<!-- </aside>  -->
+
                                 <!-- ------------ ----------------------------------
                                                        SEGUNDA-SECCION
                                   --------------------------------------------------->
 
-  <aside id="segunda-columna"> 
-  <section  class="caja-vertical"  id="imagen-btn-caja">
+   <!-- <aside id="segunda-columna">  -->
+  <section  class="caja-vertical-dos"  id="imagen-btn-caja">
 
-    <h1 class="titulo-imagen">TEXTO</h1> 
+    <h1 class="titulo-imagen-texto">TEXTO</h1> 
 <p>SUPERIOR</p>
 <input type="text" class="caja-superior">
 <div class="caja-uno">
@@ -162,7 +161,7 @@
  
  <p>FUENTE</p>
 <div id="imagen"> 
-    <select name="familia-fuentes" id="impacto">impact
+    <select name="familia-fuentes" id="familia-fuentes">
         <option value="Arial">Arial</option>
         <option value="fantasy">Fantasy</option>
         <option value="Georgia">Georgia</option>
@@ -172,13 +171,13 @@
         <option value="Monaco ">Monaco </option>
         <option value="Tahoma ">Tahoma </option>
 </select>
-<div>
+<div class="dividir-cajas">
 <div class="fuentes">
 <input type="number" name="tamaños-fuente" id="tamaños-fuentes" min="10" max="50">
-</div class="">
-<button class="boton-align"><i class="fa-solid fa-align-left"></i></button>
-<button class="boton-align"><i class="fa-solid fa-align-center"></i></button>
-<button class="boton-align"><i class="fa-solid fa-align-right"></i></button>
+</div class="cajas-align">
+<button class="btn-align"><i class="fa-solid fa-align-left"></i></button>
+<button class="btn-align"><i class="fa-solid fa-align-center"></i></button>
+<button class="btn-align"><i class="fa-solid fa-align-right"></i></button>
 </div>
 
 
@@ -187,7 +186,7 @@
 <p>COLOR</p>
 <div  class="boton-fondo">
     
-           <input  type="color" id="blend-mode-color-input" value="#000000" class="circulo"> 
+    <input  type="color" id="blend-mode-color-input" value="#000000" class="circulo"> 
   
   <span id="blend-mode-color" class="texto-0">#000000</span>
 </div>
@@ -196,11 +195,9 @@
 
 <div class="caja-dos">
     <p>FONDO</p>
-    <div  class="boton-fondo">
-    
-               <input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo"> 
-       
-      <span id="blend-mode-color" class="texto-f">#FFFFFF</span>
+    <div  class="boton-fondo"> 
+  <input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo"> 
+     <span id="blend-mode-color" class="texto-f">#FFFFFF</span>
 </div>
 </div>
 </div>
@@ -212,15 +209,15 @@
 <p>CONTORNO</p>
 <div class="botones-contorno">
 <div class="caja-contorno" >
-    <button  type="button" class="boton-ninguno">Ninguno</button>
+    <button  type="button" class="btn-ninguno">Ninguno</button>
 </div>
 
 <div class="cajas-contorno">
-    <button class="boton-claro">claro</button>
+    <button class="btn-claro">claro</button>
 </div>
 
 <div class="caja-oscuro">
-    <button  type="button"  class="boton-oscuro">Oscuro</button>
+    <button  type="button"  class="btn-oscuro">Oscuro</button>
 </div> 
 </div>
 
@@ -240,7 +237,7 @@
 
 </div>
 </section> 
-</aside>
+ </aside> 
  
 
  
