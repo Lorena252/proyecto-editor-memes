@@ -137,8 +137,8 @@ text-align: center;
 }
  @media(min-width:300px) and (max-width:1000px){
     .caja-interior-meme{
-     /* width:80%; */
-max-width:350px;
+     width:450%;
+/* max-width:350px; */
 display: flex;
  justify-content: center;
  flex-grow: 1;
