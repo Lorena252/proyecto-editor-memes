@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>GENERADOR DE MEMES</title>
 </head>
-<body class="dark-theme">
+<body class="darkmode">
     
                                  <!-- -------------------------------------------
                                              HEADER
@@ -17,21 +17,23 @@
                               
 
 
-<header>
-<h1 class="titulo-principal">Generador de Memes</h1>
+<header class="darkmode2">
+<h1 class="titulo-principal" >Generador de Memes</h1>
 <div class="caja-btn-principales">
 <button class="btn-imagen" id="imagen-btn-caja" > 
     <i class="fa-solid fa-file-image"></i>Imagen</button>
 
-<button type="button" class="btn-texto" id=""> 
+<button type="button" class="btn-texto" id="texto-btn-caja"> 
   <i class="fa-solid fa-a"></i>Texto</button>
 
-<button type="button" class="btn-modo theme-dark" id="theme-dark"  aria-label="modo-oscuro">
+<button type="button" class="btn-modo dark-mode " id="dark-mode"  aria-label="modo-oscuro">
   <i class="fa-solid fa-lightbulb"></i>Modo oscuro</button>
 
-  <!-- <button type="button" class="btn-modo light-theme" id="light-theme" >
+
+    <button type="button" class="btn-modo light-mode " id="light-mode" >
     <i class="fas fa-lightbulb button-icon-text" aria-label="modo-claro"></i>Modo claro
-  </button> -->
+  </button>  
+
 </div>
 </header>
 
@@ -40,17 +42,20 @@
                                                        CONTENEDOR-IMAGEN-MEME
                                   --------------------------------------------- -->
             
-  <main>                              
-<div class="caja-general">
-    <div class="caja-interior-meme">
+  <main class="darkmode">                              
+<div class="dark-mode" id="caja-general">
+    <div class="caja-interior-meme" id="contenedor-meme">
         <h1 id="top-texto">TOP TEXT</h1>
-        <img src="" alt="" id="meme" class="meme">
+        <div src="" alt="" class="meme"  id="meme-imagen" >
+          <img src="perrito.jpg" alt=""width="100%"
+      >
+        </div>
         <!-- </div>  -->
        <h1 id="bottom-texto"> BOTTOM TEXT</h1>
     </div>
  <!-- <div class="boton-descargar">  -->
 
-   <button type= "button" value="boton-descaragr" class="btn-descargar"><i class="fa-solid fa-download"></i> Descargar meme </button>
+   <button type= "button" value="boton-descaragr" class="btn-descargar" id="descargar"><i class="fa-solid fa-download"></i> Descargar meme </button>
  <!-- </div>  -->
 </main>
 
@@ -58,25 +63,29 @@
                                           <!-- -------------------------------------------
                                                       SECCION-EDICION-IMAGEN
                                             ------------------------------------------ -->
- <aside id="primera-columna">
-    <button  type= "button" class="btn-cerrar">
+ <aside id="primera-columna" > 
+    <button  type= "button" class="btn-cerrar " id="boton-cerrar">
      <i class="fa-solid fa-x"></i>
   </button>
-<section  class="caja-vertical" id="imagen">
+
+<section id="caja-vertical" class="oculto">  
+
   <div> 
     <h1 class="titulo-imagen-texto">IMAGEN</h1> 
 <h3 class="titulo-url">URL </h3>
-<input type="text"  id="url-input">
+
+ <input type="text"  id="url-imagen" name="url" aria-label="url imagen"> 
 </div> 
   
                                            <!-- ----------------------------------
                                                     EDICION-FONDO
                                           -------------------------------- -->
   <p>FONDO</p>
-<div  class="boton-fondo">
-<input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo"> 
-<span id="blend-mode-color" class="texto-f">#FFFFFF</span> 
-
+  <div class="boton-fondo">
+<div  class="boton-fondo2">
+<input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo">
+ <span id="blend-mode-color" class="texto-f">#FFFFFF</span>  
+ </div>  
 <div class="blend-mode-uno">
      <select  id="blend-mode-color" class="modos-blend">
        <option value="unset">Ninguno</option>
@@ -86,77 +95,84 @@
        <option value="luminosity">Luminocidad</option>
        <option value="multiply">Multiplicar</option>
      </select>
+   
   </div>
-</div>  
+
+</div>
                                                 <!-- --------------------------------------------
                                                             EDICION-FILTROS
                                                 ----------------------------------------------- -->
-  <div class="caja-filtros-opciones"></div>
+  <div class="caja-filtros-opciones">
       <p class="titulo-filtros">FILTROS</p>
-        <div class="caja-slider"></div>
+  <div class="caja-slider">
       <label for="brillo">BRILLO</label> <br>
       <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
 </div>
+
 <div class="caja-slider">
    <label for="opacidad">OPACIDAD</label> <br>
   <input type="range" id="brightness-slider" min="0" max="1" value="1" step="0.1">
 </div>
+
 <div class="caja-slider">
   <label for="contraste" class="titulo-slider" >CONTRASTE</label> <br>
   <input type="range" id="brightness-slider" min="100" max="1000" value="100">
 </div>
+
  <div class="caja-slider" >
   <label for="desenfoque" class="titulo-slider">DESENFOQUE</label> <br>
   <input type="range" id="brightness-slider" min="0" max="10" value="0" step="0.1">
 </div>
+
 <div class="caja-slider" >
   <label for="escala-de-grises" class="titulo-slider" >ESCALA DE GRISES</label> <br>
  <input type="range" id="brightness-slider" min="0" max="100" value="0" >
 </div>
+
 <div class="caja-slider" >
   <label for="sepia" class="titulo-slider">SEPIA</label> <br>
   <input type="range" id="brightness-slider" min="0" max="100" value="0">
 </div>
+
 <div class="caja-slider">
   <label for="hije"class="titulo-slider" >HIJE</label> <br>
   <input type="range" id="brightness-slider" min="0" max="360" value="0">
 </div>
 <div class="caja-slider">
   <label for="saturado" class="titulo-slider">SATURADO</label> <br>
-  <input type="range" id="brightness-slider" min="100" max="1000" value="100" step="10">
+  <input type="range" id="brightness-slider" min="100" max="1000" value="100" step="10" >
 </div>
+
 <div class="caja-slider" >
   <label for="negativo" class="titulo-slider">NEGATIVO</label> <br>
   <input type="range" id="brightness-slider" min="0" max="1" value="0" step="0.1">
 </div>
+
 </div>
 <button type="button" class="btn-filtros" value="Reestablecer fitros">Reestablecer filtros</button>
 </div>
-
+</div>
 </section>
-
-<!-- </aside>  -->
 
                                 <!-- ------------ ----------------------------------
                                                        SEGUNDA-SECCION
                                   --------------------------------------------------->
 
-   <!-- <aside id="segunda-columna">  -->
-  <section  class="caja-vertical-dos"  id="imagen-btn-caja">
+  <section id="caja-vertical-dos" class="imagen-btn-caja  oculto" > 
 
     <h1 class="titulo-imagen-texto">TEXTO</h1> 
 <p>SUPERIOR</p>
 <input type="text" class="caja-superior">
-<div class="caja-uno">
+<div class="caja-texto">
 <input type="checkbox" id="superior">
-<label for="superior">Sin texto superior</label>
+<label for="superior" class="texto-superior">Sin texto superior</label>
  </div>   
  
  <p>INFERIOR</p>
 <input type="text" class="caja-inferior">
-<div class="caja-uno">
+<div class="caja-texto">
 <input type="checkbox" id="inferior">
-<label for="inferior" >Sin texto inferior</label>
+<label for="inferior" class="texto-inferior">Sin texto inferior</label>
  </div>   
  
  <p>FUENTE</p>
@@ -173,38 +189,45 @@
 </select>
 <div class="dividir-cajas">
 <div class="fuentes">
-<input type="number" name="tamaños-fuente" id="tamaños-fuentes" min="10" max="50">
+<input type="number" name="tamaños-fuente" id="tamaños-fuentes" min="10" max="50" value="10">
 </div class="cajas-align">
 <button class="btn-align"><i class="fa-solid fa-align-left"></i></button>
 <button class="btn-align"><i class="fa-solid fa-align-center"></i></button>
 <button class="btn-align"><i class="fa-solid fa-align-right"></i></button>
-</div>
+</div> 
 
 
-<div class="dividir-cajas">
-    <div class="caja-uno">
+ <div class="dividir-cajas-dos"> 
+     <div class="caja-uno">
+     
+      <div class="separar">  
 <p>COLOR</p>
-<div  class="boton-fondo">
-    
-    <input  type="color" id="blend-mode-color-input" value="#000000" class="circulo"> 
-  
-  <span id="blend-mode-color" class="texto-0">#000000</span>
+ <div class="boton-fondo">
+  <div  class="boton-fondo2">
+  <input  type="color" id="blend-mode-color-input" value="#000000" class="circulo">
+   <span id="blend-mode-color" class="texto-f">#000000</span>  
+   </div>  
 </div>
 </div>
 
 
-<div class="caja-dos">
-    <p>FONDO</p>
-    <div  class="boton-fondo"> 
-  <input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo"> 
-     <span id="blend-mode-color" class="texto-f">#FFFFFF</span>
-</div>
+<div class="separar-dos">
+<p>FONDO</p>
+<div class="boton-fondo">
+  <div  class="boton-fondo2">
+  <input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo">
+   <span id="blend-mode-color" class="texto-f">#FFFFFF</span>  
+   </div>  
 </div>
 </div>
 
+</div>
 
+
+<div class="caja-texto">
 <input type="checkbox" id="fondo-transparente">
-<label for="fondo-transparente" >Fondo transparente</label>
+<label for="fondo-transparente" class="texto-transparente" >Fondo transparente</label>
+</div>
 
 <p>CONTORNO</p>
 <div class="botones-contorno">
@@ -236,11 +259,15 @@
 
 
 </div>
-</section> 
+</section>    
  </aside> 
  
 
  
+ 
+
+
+
 
 
 <script src="app.js"></script>
