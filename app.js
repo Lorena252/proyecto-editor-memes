@@ -9,9 +9,77 @@ const botonImagen = document.getElementById("imagen-btn-caja");
 const contenedorMeme = document.getElementById("contenedor-meme");
 const botonDescargar = document.getElementById("descargar");
 const botonTexto = document.getElementById("texto-btn-caja");
-const modoClaro = document.getElementById("light-mode");
-const modoOscuro = document.getElementById("dark-mode");
+const modoClaro = document.getElementById("light-theme");
+const modoOscuro = document.getElementById("dark-theme");
 const memeImagen = document.getElementById("meme-imagen");
+const urlImagen = document.getElementById("url-imagen");
+const contmeme = document.getElementById("contenedor-meme")
+const btnDescargar = document.getElementById("descargar");
+
+
+
+
+
+
+// Aside, texto e imagen// FUNCIONA=>
+
+botonImagen.addEventListener("click", ()=>{
+  aside.style.display ="block"; 
+  seccionImagen.classList.remove("oculto");
+seccionTexto.classList.add("oculto");
+
+});
+
+
+botonTexto.addEventListener("click", ()=>{
+   aside.style.display = "block";
+   seccionTexto.classList.remove("oculto");
+ seccionImagen.classList.add("oculto");
+});
+
+ //aside url// //FUNCIONA//
+
+
+urlImagen.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  const valueUrl = urlImagen.value;
+  memeImagen.style.backgroundImage = `url("${valueUrl}")`;
+  memeImagen.style.backgroundPosition = "center"
+});
+
+//boton descargar// FUNCIONA
+btnDescargar.addEventListener("click", ()=>
+domtoimage.toBlob(document.getElementById("contenedor-meme")).then(blob=>
+   saveAs (blob, "meme-png")));
+
+
+
+//ESTE CODIGO FUNCIONA CORRECTAMENTE//  modo oscuro y modo claro para boton=> (aca camnie el "click" por el onclick)
+
+modoOscuro.addEventListener("onclick", ()=>{
+  modoClaro.classList.remove("oculto");
+  modoOscuro.classList.add("oculto");
+  });
+  
+  modoClaro.addEventListener("onclick", ()=>{
+   modoOscuro.classList.remove("oculto");
+   modoClaro.classList.add("oculto");
+  
+});
+
+//background para claro y oscuro// funciona//
+
+const boton = document.getElementById("dark-theme");
+const confiUser = window.matchMedia("(prefers-color-scheme: light)");
+boton.addEventListener("click", ()=>{
+ console.log(confiUser.matches)
+ if (confiUser.matches){
+  document.body.classList.toggle("light-theme");
+ } else {
+  document.body.classList.toggle("dark-theme");
+
+ }
+})
 
 
 //contenedor-imagen-meme// 
@@ -21,66 +89,9 @@ const memeImagen = document.getElementById("meme-imagen");
 // const 
 // ;
 
-
-
-//ESTE CODIGO FUNCIONA CORRECTAMENTE// =>
-
-botonImagen.addEventListener("click", ()=>{
-   aside.style.display ="block"; 
-   seccionImagen.classList.remove("oculto");
-seccionTexto.classList.add("oculto");
-
-});
-
-
-botonTexto.addEventListener("click", ()=>{
-    aside.style.display = "block";
-    seccionTexto.classList.remove("oculto");
-  seccionImagen.classList.add("oculto");
-});
-
-
-//ESTE CODIGO FUNCIONA CORRECTAMENTE// => 
-
-modoOscuro.addEventListener("click", ()=>{
-    modoClaro.classList.remove("oculto");
-    modoOscuro.classList.add("oculto");
-    });
-    
-    modoClaro.addEventListener("click", ()=>{
-     modoOscuro.classList.remove("oculto");
-     modoClaro.classList.add("oculto");
-    
-    });
-    
-
-
-
-// -----------esto funciona-- botones oscuro claro-----
-
-// const bdark = document.querySelector("b-mode");
-// const body  = document.querySelector("body");
-// bdark.addEventListener("click", e =>{
+// const modeOscuro = document.getElementById("dark-mode");
+// const body = document.querySelector("header");
+// modeOscuro.addEventListener("click", e =>{
 //  body.classList.toggle("darkmode");
-
 // });
-
-
-
-//  const bdarkk = document.querySelector("#b-mode");
-//  const div = document.querySelector("div");
-//  bdarkk.addEventListener("click", e =>{
-    
-//      div.classList.toggle("dark-mode");
-// })
-
-// var dark = document.querySelector("#b-mode");
-// var header = document.querySelector("header");
-// dark.addEventListener("click", e =>{
-//     header.classList.toggle("darkmode2");
-
-// }) 
-
-// var dark =document.querySelector("#b-mde");
-// var main = document.querySelector("main")
 
