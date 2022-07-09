@@ -15,8 +15,7 @@ const memeImagen = document.getElementById("meme-imagen");
 const urlImagen = document.getElementById("url-imagen");
 const contmeme = document.getElementById("contenedor-meme")
 const btnDescargar = document.getElementById("descargar");
-
-
+const btnCerrar = document.getElementById("boton-cerrar");
 
 
 
@@ -35,6 +34,13 @@ botonTexto.addEventListener("click", ()=>{
    aside.style.display = "block";
    seccionTexto.classList.remove("oculto");
  seccionImagen.classList.add("oculto");
+});
+
+
+//mostrar y cerrar panel aside// FUNCIONA//
+
+btnCerrar.addEventListener('click', ()=>{
+  aside.style.display ='none';
 });
 
  //aside url// //FUNCIONA//
@@ -80,6 +86,42 @@ boton.addEventListener("click", ()=>{
 
  }
 })
+
+//mostrar y cerrar panel aside//
+
+
+// const ocultarPanel = () => {
+//   $('panel').classList.add('oculto')
+// }
+
+// const mostrarPanel = () => {
+//   $('panel').classList.remove('oculto')
+// }
+
+// const mostrarPanelImagen = () => {
+//   $(`panel-text`).classList.add('oculto')
+//   $(`panel-img`).classList.remove('oculto')
+// }
+
+// const mostrarPanelTexto = () => {
+//   $(`panel-img`).classList.add('oculto')
+//   $(`panel-text`).classList.remove('oculto')
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //contenedor-imagen-meme// 
