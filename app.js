@@ -16,11 +16,54 @@ const urlImagen = document.getElementById("url-imagen");
 const contmeme = document.getElementById("contenedor-meme")
 const btnDescargar = document.getElementById("descargar");
 const btnCerrar = document.getElementById("boton-cerrar");
+const textoColorIn = document.getElementById("blend-mode-color-input");
+const fondoColorIn = document.getElementById("blend-mode-color-fondo-input");
+const  textTop = document.getElementById("top-texto");
+const textBottom = document.getElementById("bottom-texto");
+const inputFondo = document.getElementById("mode-color-input");
+const btnAlignIzq = document.getElementById("btn-align-left");
+const btnAlignCent = document.getElementById("btn-align-center");
+const btnAlignRight = document.getElementById("btn-align-right");
+const fondoTransparente = document.getElementById("fondo-transparente");
+;
+
+
+//FONDO TRANSPARENTE//
+
+fondoTransparente.addEventListener("click", ()=>{
+  textTop.classList.toggle("texto-transparente");
+  textBottom.classList.toggle("texto-transparente");
+});
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+//FILTROS IMAGEN//
+
+
+
+
+
+
+
+
+
+
+
+;
 // Aside, texto e imagen// FUNCIONA=>
+;
 
 botonImagen.addEventListener("click", ()=>{
   aside.style.display ="block"; 
@@ -86,6 +129,55 @@ boton.addEventListener("click", ()=>{
 
  }
 })
+
+
+//fondo del texto y color de texto// FUNCIONA
+
+textoColorIn.addEventListener("input", (event) =>{
+  textTop.style.color = event.target.value;
+  textBottom.style.color = event.target.value;
+});
+
+fondoColorIn.addEventListener("input", (event)=>{
+  textTop.style.background = event.target.value;
+  textBottom.style.background = event.target.value;
+});
+
+
+
+
+
+
+// botones aling// FUNCIONA
+
+btnAlignIzq.addEventListener("click", () =>{
+  textTop.style.textAlign = "left";
+  textBottom.style.textAlign = "left";
+});
+
+btnAlignCent.addEventListener("click", () =>{
+textTop.style.textAlign = "center";
+textBottom.style.textAlign = "center";
+});
+
+btnAlignRight.addEventListener("click", ()=>{
+  textTop.style.textAlign = "right";
+  textBottom.style.textAlign = "right";
+});
+
+
+//
+
+
+
+
+
+
+
+
+
+
+
 
 //mostrar y cerrar panel aside//
 

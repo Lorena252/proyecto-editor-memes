@@ -41,11 +41,11 @@
                                   --------------------------------------------- -->
   <main class="darkmode">                              
     <div class="caja-interior-meme" id="contenedor-meme">
-        <p id="top-texto" aria-label="texto superior del meme"></p>
+        <p id="top-texto" class="texto-superior-meme"   aria-label="texto superior del meme" >TOP</p>
 
      <div src="(desconocido)" alt id="meme-imagen" style="background-image: url();"> </div>
         
-  <p id="bottom-texto" aria-label="texto inferior del meme"> </p>
+  <p id="bottom-texto" class="texto-inferior-meme"   aria-label="texto inferior del meme"> BOTTOM </p>
     </div>
 
    <button type= "button" value="boton-descaragr" class="btn-descargar" id="descargar"><i class="fa-solid fa-download" aria-label="Descargar meme"></i> Descargar meme </button>
@@ -70,7 +70,7 @@
   <p>FONDO</p>
    <div class="boton-fondo">
    <div  class="boton-fondo2">
-   <input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo">
+   <input  type="color" id="mode-color-input" value="#FFFFFF" class="circulo">
    <span id="blend-mode-color" class="texto-f">#FFFFFF</span>  
    </div>  
     <div class="blend-mode-uno">
@@ -174,9 +174,9 @@
 <div class="fuentes">
 <input type="number" name="tamaños-fuente" id="tamaños-fuentes" min="10" max="50" value="10">
 </div class="cajas-align">
-<button class="btn-align"><i class="fa-solid fa-align-left"></i></button>
-<button class="btn-align"><i class="fa-solid fa-align-center"></i></button>
-<button class="btn-align"><i class="fa-solid fa-align-right"></i></button>
+<button class="btn-align" id="btn-align-left"><i class="fa-solid fa-align-left"></i></button>
+<button class="btn-align" id="btn-align-center"><i class="fa-solid fa-align-center"></i></button>
+<button class="btn-align" id="btn-align-right"><i class="fa-solid fa-align-right"></i></button>
 </div> 
 
 
@@ -188,7 +188,7 @@
  <div class="boton-fondo">
   <div  class="boton-fondo2">
   <input  type="color" id="blend-mode-color-input" value="#000000" class="circulo">
-   <span id="blend-mode-color" class="texto-f">#000000</span>  
+   <span id="blend-mode-color" class="texto-f"></span>  
    </div>  
 </div>
 </div>
@@ -198,8 +198,8 @@
 <p>FONDO</p>
 <div class="boton-fondo">
  <div  class="boton-fondo2">
-<input  type="color" id="blend-mode-color-input" value="#FFFFFF" class="circulo">
- <span id="blend-mode-color" class="texto-f">#FFFFFF</span>  
+<input  type="color" id="blend-mode-color-fondo-input" value="#FFFFFF" class="circulo">
+ <span id="blend-mode-color" class="texto-f"></span>  
  </div>  
 </div>
 </div>
@@ -209,7 +209,7 @@
 
 <div class="caja-texto">
 <input type="checkbox" id="fondo-transparente">
-<label for="fondo-transparente" class="texto-transparente" >Fondo transparente</label>
+<label for="fondo-transparente" class="texto-transparente" id="fondo-transparente-texto">Fondo transparente</label>
 </div>
 
 <p>CONTORNO</p>

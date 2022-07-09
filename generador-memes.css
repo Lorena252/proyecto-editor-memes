@@ -17,7 +17,8 @@
  --color--texto:black; 
  --btn--hover: rgb(170, 170, 179);
  --color--btn:rgb(228, 222, 222);
-    --color--blend-mode:rgb(228, 222, 222);                                   
+    --color--blend-mode:rgb(228, 222, 222);   
+                                    
   }          
 
   body.dark-theme{
@@ -169,10 +170,10 @@ flex-grow: 1;
 }
  
  #top-texto{
-    top: 0;
+    /* top: 0; */
  padding: 35px 50px;
  background-color: rgb(255, 255, 255);
- color: black;
+ /* color: black; */
 font-weight: 900;
 font-size: 20px;
 text-align: center;
@@ -181,7 +182,7 @@ margin: 0;
  #bottom-texto{
 padding: 35px 50px;
 background-color: rgb(255, 255, 255);
- color: black;
+ /* color: 0000; */
 font-weight: 900;
 font-size: 20px;
 text-align: center;
@@ -344,7 +345,18 @@ font-size: 10px;
      .blend-mode-uno{
         padding-left: 15px;
     }
-/* 
+
+    #blend-mode-color-fondo{
+        padding: 5px 8px;
+    border: none;
+    color: var(--color--texto);
+    margin: 1px;
+    background-color: var(--color--blend-mode);
+    outline: none;
+    }
+
+
+
                          ---------------------------
                                 EDICION FILTROS
                            ----------------------- */
@@ -424,10 +436,16 @@ input[type=range] {
 
 }
 
-  #texto-superior,#texto-inferior, .texto-transparente{
+  #texto-superior,#texto-inferior, #texto-transparente{
 margin-left: 3px;
 
 }
+
+
+.texto-transparente{
+
+}
+
 
 .blend-mode-color-input{
     width: 100%;
@@ -557,6 +575,6 @@ width: 94%;
  height: 30px;
  background-color:var(--color--blend-mode);
  border: none;
- color: var(--color--texto)
+ color: var(--color--texto);
  outline: none;
 } 
