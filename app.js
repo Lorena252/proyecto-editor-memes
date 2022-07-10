@@ -25,22 +25,28 @@ const btnAlignIzq = document.getElementById("btn-align-left");
 const btnAlignCent = document.getElementById("btn-align-center");
 const btnAlignRight = document.getElementById("btn-align-right");
 const fondoTransparente = document.getElementById("fondo-transparente");
+const colorModeInput = document.getElementById("mode-color-input");
 ;
 
 
-//FONDO TRANSPARENTE//
+
+
+
+
+
+
+
+
+
+
+
+
+//FONDO TRANSPARENTE// TERMINAR--
 
 fondoTransparente.addEventListener("click", ()=>{
   textTop.classList.toggle("texto-transparente");
   textBottom.classList.toggle("texto-transparente");
 });
-
-
-
-
-
-
-
 
 
 
@@ -118,17 +124,46 @@ modoOscuro.addEventListener("onclick", ()=>{
 
 //background para claro y oscuro// funciona//
 
+// const boton = document.getElementById("dark-theme");
+// const confiUser = window.matchMedia("(prefers-color-scheme: light)");
+// boton.addEventListener("click", ()=>{
+//  console.log(confiUser.matches)
+//  if (confiUser.matches){
+//   document.body.classList.toggle("light-theme");
+//  } else {
+//   document.body.classList.toggle("dark-theme");
+
+//  }
+// });
+
+//
 const boton = document.getElementById("dark-theme");
-const confiUser = window.matchMedia("(prefers-color-scheme: light)");
+const confiUser = matchMedia("(orientation:portrait)");
 boton.addEventListener("click", ()=>{
- console.log(confiUser.matches)
+//  console.log(confiUser.matches)
  if (confiUser.matches){
   document.body.classList.toggle("light-theme");
  } else {
   document.body.classList.toggle("dark-theme");
 
  }
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //fondo del texto y color de texto// FUNCIONA
@@ -142,6 +177,24 @@ fondoColorIn.addEventListener("input", (event)=>{
   textTop.style.background = event.target.value;
   textBottom.style.background = event.target.value;
 });
+
+
+//color FONDO caja meme // FUNCIONA//
+colorModeInput.addEventListener("input", (event)=>{
+  memeImagen.style.background = event.target.value;
+});
+
+;
+
+
+
+
+
+
+
+
+
+
 
 
 

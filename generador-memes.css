@@ -33,7 +33,7 @@
 
 }
 
-@media(prefers-color-scheme: light){
+@media(color-scheme: light){
     body{
         --color--body: rgb(219, 217, 217);
         --color--header:rgb(228, 222, 222); 
@@ -170,8 +170,7 @@ flex-grow: 1;
 }
  
  #top-texto{
-    /* top: 0; */
- padding: 35px 50px;
+  padding: 35px 50px; 
  background-color: rgb(255, 255, 255);
  /* color: black; */
 font-weight: 900;
@@ -179,6 +178,7 @@ font-size: 20px;
 text-align: center;
 margin: 0;
  }
+ 
  #bottom-texto{
 padding: 35px 50px;
 background-color: rgb(255, 255, 255);
@@ -194,6 +194,13 @@ margin: 0;
       padding: 10px;
     }
 }
+
+.texto-transparente{
+/* background-color: transparent;
+position: absolute; */
+
+}
+
 
 
  .btn-descargar{
@@ -228,7 +235,7 @@ margin-top: 15px;
 
 #primera-columna{
 width: 280px;
-display: flex;
+/* display: flex; */
  height: 100%;  
 position: fixed;
 flex-direction: column;
@@ -442,9 +449,7 @@ margin-left: 3px;
 }
 
 
-.texto-transparente{
 
-}
 
 
 .blend-mode-color-input{
