@@ -3,6 +3,7 @@
     padding:0; 
      text-decoration: none;
      -moz-box-sizing: border-box;
+
      
 }
 
@@ -32,14 +33,13 @@
 
 
 }
-
-/* @media(prefers-color-scheme: light){
+ @media(prefers-color-scheme: light){
     body{
-        /* --color--body: rgb(219, 217, 217);
+         --color--body: rgb(219, 217, 217);
         --color--header:rgb(228, 222, 222); 
         --color--aside: white;
-     --color--texto:black; */
-    /* }
+     --color--texto:black; 
+    }
 
     body.dark-theme{
         --color--body:rgb(54, 54, 80);
@@ -48,7 +48,7 @@
         --color--texto:white;
       --btn--hover:
 }
-}  */
+}  
 
 
 
@@ -66,6 +66,7 @@
  display: none;
    
  } 
+
 
 
                                                      /* ------------------------------------
@@ -473,6 +474,10 @@ display:block;
 padding: 3px;
 
 } 
+
+textarea{
+    color: var(--color--texto);
+}
 
 #familia-fuentes{
 width: 97%;

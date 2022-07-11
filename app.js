@@ -29,10 +29,8 @@ const colorModeInput = document.getElementById("mode-color-input");
 const blendModeColor = document.getElementById("blend-mode-color");
 const superiorr = document.getElementById("superiorr");
 const inferiorr = document.getElementById("inferiorr");
-;
-
-
-//declaracion filtros//
+const sinTextSuperior = document.getElementById("sin-texto-superior");
+const sinTextInferior = document.getElementById("sin-texto-inferior");
 const  brightnessFiltro = document.getElementById("brightness");
 const   opacityFiltro = document.getElementById ("opacity");
 const   contrasteFiltro = document.getElementById("contraste");
@@ -146,7 +144,7 @@ modoClaro.addEventListener("click", ()=>{
 //background para claro y oscuro// funciona//
 
  const boton = document.getElementById("dark-theme");
- const confiUser = window.matchMedia("(prefers-color-scheme: light)");
+ const confiUser = matchMedia("(prefers-color-scheme: light)");
  boton.addEventListener("click", ()=>{
   console.log(confiUser.matches)
   if (confiUser.matches){
@@ -205,15 +203,28 @@ inferiorr.addEventListener("keyup", ()=>{
 });
 
 ;
+//sin texto supeior e inferior. top y bottom//FUNCIONA
 
-//sin texto supeior e inferior. top y bottom//
-//declaracion//
-const sinTextSuperior = document.getElementById("sin-texto-superior");
-const sinTextInferior = document.getElementById("sin-texto-inferior");
 
-sinTextSuperior =() =>{
-  if
+sinTextSuperior.addEventListener("change",()=>{
+  if(sinTextSuperior.checked){
+    textTop.classList.add("oculto");
+  }else{
+   textTop.classList.remove("oculto");
+  }
+});
+
+
+sinTextInferior.addEventListener("change",()=>{
+if(sinTextInferior.checked){
+  textBottom.classList.add("oculto");
+  
+}else{
+  textBottom.classList.remove("oculto");
 }
+});
+
+
 
 
 

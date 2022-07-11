@@ -42,11 +42,11 @@
                                   --------------------------------------------- -->
   <main class="darkmode">                              
     <div class="caja-interior-meme" id="contenedor-meme">
-        <p id="top-texto" class="texto-superior-meme"   aria-label="texto superior del meme" ></p>
+        <p id="top-texto" class="texto-superior-meme "   aria-label="texto superior del meme" ></p>
 
      <div src="(desconocido)" alt id="meme-imagen" style="background-image: url();"> </div>
         
-  <p id="bottom-texto" class="texto-inferior-meme"   aria-label="texto inferior del meme">  </p>
+  <p id="bottom-texto" class="texto-inferior-meme "   aria-label="texto inferior del meme">  </p>
     </div>
 
    <button type= "button" value="boton-descaragr" class="btn-descargar" id="descargar"><i class="fa-solid fa-download" aria-label="Descargar meme"></i> Descargar meme </button>
@@ -71,7 +71,7 @@
   <p>FONDO</p>
    <div class="boton-fondo">
    <div  class="boton-fondo2">
-   <input  type="color" id="mode-color-input" value="#FFFFFF" class="circulo">
+   <input  type="color" id="mode-color-input" class="circulo" value="#FFFFFF" >
    <span id="blend-mode-color" class="texto-f">#FFFFFF</span>  
    </div>  
     <div class="blend-mode-uno">
@@ -151,23 +151,23 @@
 <p>SUPERIOR</p>
 <div class="caja-texto">
 <textarea name="text" id="superiorr"  class="caja-superior"  maxlength="30">TEXTO SUPERIOR</textarea>
-<input type="checkbox" id="superior">
-<label for="superior" id="sin-texto-superior">Sin texto superior</label>
+<input type="checkbox" id="sin-texto-superior"><label for="sin-texto-superior" >Sin texto superior</label>
+
 
  </div>   
 
  <p>INFERIOR</p>
 <div class="caja-texto">
 <textarea name=" text" id="inferiorr" class="caja-inferior"  maxlength="30">TEXTO INFERIOR</textarea>
-<input type="checkbox" >
-<label for="inferior" id="sin-texto-inferior">Sin texto inferior</label>
+<input type="checkbox" id="sin-texto-inferior"><label for="sin-texto-inferior" >Sin texto inferior</label>
+
  </div>   
  
 
 
  <p>FUENTE</p>
 <div id="imagen"> 
-    <select name="font-type" id="familia-fuentes">
+    <select name="font-type" id="familia-fuentes" >
         <option value="Montserrat">Montserrat</option>
         <option value="Roboto">Roboto</option>
         <option value="Albert Sans">Albert Sans</option>
@@ -235,7 +235,7 @@
 </div>
 
 <p>ESPACIADO</p>
-<input type="number" class="caja-espaciado" name="tamaño-espaciado" id="tamaño-espaciado" min="10" max="50">
+<input type="number" class="caja-espaciado" name="tamaño-espaciado" id="tamaño-espaciado" value="35" min="10" max="50">
 
 <p>INTERLINEADO</p>
 <select  id="line-height">
