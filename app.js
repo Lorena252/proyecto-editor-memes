@@ -26,18 +26,55 @@ const btnAlignCent = document.getElementById("btn-align-center");
 const btnAlignRight = document.getElementById("btn-align-right");
 const fondoTransparente = document.getElementById("fondo-transparente");
 const colorModeInput = document.getElementById("mode-color-input");
+const blendModeColor = document.getElementById("blend-mode-color");
+const superiorr = document.getElementById("superiorr");
+const inferiorr = document.getElementById("inferiorr");
 ;
 
 
+//declaracion filtros//
+const  brightnessFiltro = document.getElementById("brightness");
+const   opacityFiltro = document.getElementById ("opacity");
+const   contrasteFiltro = document.getElementById("contraste");
+const   blurFiltro = document.getElementById("blur");
+const   grayscaleFiltro = document.getElementById("grayscale");
+const   sepiaFiltro = document.getElementById("sepia");
+const    hueFiltro = document.getElementById("hue");
+const    saturateFiltro = document.getElementById("saturate");
+const   invertFiltro = document.getElementById("invert");
+const  resetBtn = document.getElementById("reset-btn");
+
+//FILTROS//
+const filtrosDeImagen = () =>{
+  memeImagen.style.filter = `brightness(${brightnessFiltro.value}) opacity(${opacityFiltro.value}) contrast(${contrasteFiltro.value}%) blur(${blurFiltro.value}px) grayscale(${grayscaleFiltro.value}%) sepia(${sepiaFiltro.value}%) hue-rotate(${hueFiltro.value}deg) saturate(${saturateFiltro.value}%) invert(${invertFiltro.value})`;
+};
 
 
+brightnessFiltro.addEventListener("change",filtrosDeImagen);
+opacityFiltro.addEventListener("change", filtrosDeImagen);
+contrasteFiltro.addEventListener("change", filtrosDeImagen);
+blurFiltro.addEventListener("change", filtrosDeImagen);
+grayscaleFiltro.addEventListener("change", filtrosDeImagen);
+sepiaFiltro.addEventListener("change", filtrosDeImagen);
+hueFiltro.addEventListener("change", filtrosDeImagen);
+saturateFiltro.addEventListener("change", filtrosDeImagen);
+invertFiltro.addEventListener("change", filtrosDeImagen);
 
 
+//reestablecer los filtros//
 
-
-
-
-
+resetBtn.addEventListener("click", ()=>{
+brightnessFiltro.value="1";
+opacityFiltro.value="1";
+contrasteFiltro.value="100";
+blurFiltro.value="0";
+grayscaleFiltro.value="0";
+sepiaFiltro.value="0";
+hueFiltro.value="0";
+saturateFiltro.value="100";
+invertFiltro.value="0";
+filtrosDeImagen();
+});
 
 
 
@@ -50,26 +87,8 @@ fondoTransparente.addEventListener("click", ()=>{
 
 
 
-
-
-
-
-
-//FILTROS IMAGEN//
-
-
-
-
-
-
-
-
-
-
-
-;
 // Aside, texto e imagen// FUNCIONA=>
-;
+
 
 botonImagen.addEventListener("click", ()=>{
   aside.style.display ="block"; 
@@ -77,7 +96,6 @@ botonImagen.addEventListener("click", ()=>{
 seccionTexto.classList.add("oculto");
 
 });
-
 
 botonTexto.addEventListener("click", ()=>{
    aside.style.display = "block";
@@ -93,14 +111,14 @@ btnCerrar.addEventListener('click', ()=>{
 });
 
  //aside url// //FUNCIONA//
-
-
 urlImagen.addEventListener("keyup", (e) => {
   e.preventDefault();
   const valueUrl = urlImagen.value;
   memeImagen.style.backgroundImage = `url("${valueUrl}")`;
   memeImagen.style.backgroundPosition = "center"
 });
+
+
 
 //boton descargar// FUNCIONA
 btnDescargar.addEventListener("click", ()=>
@@ -109,14 +127,17 @@ domtoimage.toBlob(document.getElementById("contenedor-meme")).then(blob=>
 
 
 
+
+
+
 //ESTE CODIGO FUNCIONA CORRECTAMENTE//  modo oscuro y modo claro para boton=> (aca camnie el "click" por el onclick)
 
-modoOscuro.addEventListener("onclick", ()=>{
-  modoClaro.classList.remove("oculto");
-  modoOscuro.classList.add("oculto");
+modoClaro.addEventListener("click", ()=>{
+  modoOscuro.classList.remove("oculto");
+  modoClaro.classList.add("oculto");
   });
   
-  modoClaro.addEventListener("onclick", ()=>{
+ modoClaro.addEventListener("click", ()=>{
    modoOscuro.classList.remove("oculto");
    modoClaro.classList.add("oculto");
   
@@ -124,47 +145,20 @@ modoOscuro.addEventListener("onclick", ()=>{
 
 //background para claro y oscuro// funciona//
 
-// const boton = document.getElementById("dark-theme");
-// const confiUser = window.matchMedia("(prefers-color-scheme: light)");
-// boton.addEventListener("click", ()=>{
-//  console.log(confiUser.matches)
-//  if (confiUser.matches){
-//   document.body.classList.toggle("light-theme");
-//  } else {
-//   document.body.classList.toggle("dark-theme");
+ const boton = document.getElementById("dark-theme");
+ const confiUser = window.matchMedia("(prefers-color-scheme: light)");
+ boton.addEventListener("click", ()=>{
+  console.log(confiUser.matches)
+  if (confiUser.matches){
+   document.body.classList.toggle("light-theme");
+  } else {
+   document.body.classList.toggle("dark-theme");
 
-//  }
-// });
-
-//
-const boton = document.getElementById("dark-theme");
-const confiUser = matchMedia("(orientation:portrait)");
-boton.addEventListener("click", ()=>{
-//  console.log(confiUser.matches)
- if (confiUser.matches){
-  document.body.classList.toggle("light-theme");
- } else {
-  document.body.classList.toggle("dark-theme");
-
- }
-});
+  }
+ });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+;
 
 //fondo del texto y color de texto// FUNCIONA
 
@@ -186,16 +180,40 @@ colorModeInput.addEventListener("input", (event)=>{
 
 ;
 
+//boton ninguno, acalarar, oscurec// ??? no anda
+
+blendModeColor.addEventListener("change" , ()=>{
+  memeImagen.style.backgroundBlendMode = blendModeColor.value;
+});
+
+//texto top y bottom//
 
 
 
 
+//TEXTO SUPERIOR E INFERIOR//
 
+superiorr.addEventListener("keyup", () =>{
+  const changedTexBottom = superiorr.value;
+textTop.innerHTML= changedTexBottom;
+});
 
+inferiorr.addEventListener("keyup", ()=>{
+  const changedTextTop = inferiorr.value;{
+    textBottom.innerHTML=changedTextTop;
+  }
+});
 
+;
 
+//sin texto supeior e inferior. top y bottom//
+//declaracion//
+const sinTextSuperior = document.getElementById("sin-texto-superior");
+const sinTextInferior = document.getElementById("sin-texto-inferior");
 
-
+sinTextSuperior =() =>{
+  if
+}
 
 
 
@@ -232,26 +250,6 @@ btnAlignRight.addEventListener("click", ()=>{
 
 
 
-//mostrar y cerrar panel aside//
-
-
-// const ocultarPanel = () => {
-//   $('panel').classList.add('oculto')
-// }
-
-// const mostrarPanel = () => {
-//   $('panel').classList.remove('oculto')
-// }
-
-// const mostrarPanelImagen = () => {
-//   $(`panel-text`).classList.add('oculto')
-//   $(`panel-img`).classList.remove('oculto')
-// }
-
-// const mostrarPanelTexto = () => {
-//   $(`panel-img`).classList.add('oculto')
-//   $(`panel-text`).classList.remove('oculto')
-// }
 
 
 
@@ -266,19 +264,4 @@ btnAlignRight.addEventListener("click", ()=>{
 
 
 
-
-
-
-//contenedor-imagen-meme// 
-// const asideCerrar = document.getElementById("boton-cerrar");
-// const imagenMeme = document.getElementById("meme-imagen");
-// const imagenUrl = document.getElementById("url-imagen");
-// const 
-// ;
-
-// const modeOscuro = document.getElementById("dark-mode");
-// const body = document.querySelector("header");
-// modeOscuro.addEventListener("click", e =>{
-//  body.classList.toggle("darkmode");
-// });
 
