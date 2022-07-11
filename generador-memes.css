@@ -1,10 +1,9 @@
 *{
     margin: 0;
     padding:0; 
-     text-decoration: none;
+     /* text-decoration: none; */
      -moz-box-sizing: border-box;
 
-     
 }
 
 
@@ -33,33 +32,8 @@
 
 
 }
- @media(prefers-color-scheme: light){
-    body{
-         --color--body: rgb(219, 217, 217);
-        --color--header:rgb(228, 222, 222); 
-        --color--aside: white;
-     --color--texto:black; 
-    }
-
-    body.dark-theme{
-        --color--body:rgb(54, 54, 80);
-        --color--header:rgb(34, 34, 59);
-        --color--aside:rgb(35, 40, 58);
-        --color--texto:white;
-      --btn--hover:
-}
-}  
 
 
-
-
-/* ///////////////////////
- /* body.light-theme{
-    --color--body: rgb(219, 217, 217);
-    --color--header:rgb(228, 222, 222); 
-    --color--aside: white;
- --color--texto:black; }   
-//////////////////////// */
 
 
 .oculto{
@@ -85,7 +59,6 @@ color: var(--color--texto);
 }
 
 .titulo-principal{
-    /* color: white; */
 text-align: center;
  margin-top: 10px;
 }
@@ -169,24 +142,23 @@ margin-top: 0;
 #meme-imagen{
 background-image: url();
 background-size: cover;
-/* width: 100%; */
+
 flex-grow: 1;
 }
  
  #top-texto{
   padding: 35px 50px; 
  background-color: rgb(255, 255, 255);
- /* color: black; */
 font-weight: 900;
 font-size: 20px;
-text-align: center;
+text-align: center; 
 margin: 0;
+
  }
  
  #bottom-texto{
 padding: 35px 50px;
 background-color: rgb(255, 255, 255);
- /* color: 0000; */
 font-weight: 900;
 font-size: 20px;
 text-align: center;
@@ -199,11 +171,6 @@ margin: 0;
     }
 }
 
-.texto-transparente{
-/* background-color: transparent;
-/* position: absolute; */ */
-
-}
 
 
 
@@ -239,7 +206,6 @@ margin-top: 15px;
 
 #primera-columna{
 width: 280px;
-/* display: flex; */
  height: 100%;  
 position: fixed;
 flex-direction: column;
@@ -412,6 +378,7 @@ input[type=range] {
    margin-top: 10px;
    margin-left: 3px;
    cursor: pointer;
+   color: var(--color--texto);
    }
    .btn-filtros:hover{
        background-color:var(--btn--hover)
@@ -569,15 +536,16 @@ justify-content: center;
 padding-left:2px ;
 }
 
- #tamaño-espaciado{
+.caja-espaciado{
 width: 94%;
  background-color: var(--color--blend-mode);
  padding: 5px;
  border: none;
  outline: none;
+ 
 } 
 
-#line-height{
+.line-height{
  width: 97%;
  height: 30px;
  background-color:var(--color--blend-mode);
@@ -585,3 +553,4 @@ width: 94%;
  color: var(--color--texto);
  outline: none;
 } 
+

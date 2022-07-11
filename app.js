@@ -41,12 +41,85 @@ const    hueFiltro = document.getElementById("hue");
 const    saturateFiltro = document.getElementById("saturate");
 const   invertFiltro = document.getElementById("invert");
 const  resetBtn = document.getElementById("reset-btn");
+const btnNinguno = document.getElementById("boton-ninguno");
+const btnClaro = document.getElementById("boton-claro");
+const btnOscruo = document.getElementById("boton-oscuro");
+
+
+
+
+//  modo oscuro y modo claro para boton//
+
+modoClaro.addEventListener("click", ()=>{
+  modoOscuro.classList.remove("oculto");
+  modoClaro.classList.add("oculto");
+  });
+  
+ modoClaro.addEventListener("click", ()=>{
+   modoOscuro.classList.remove("oculto");
+   modoClaro.classList.add("oculto");
+  
+});
+
+
+// Aside. texto e imagen//
+
+
+botonImagen.addEventListener("click", ()=>{
+  aside.style.display ="block"; 
+  seccionImagen.classList.remove("oculto");
+seccionTexto.classList.add("oculto");
+
+});
+
+//boton descargar// FUNCIONA
+btnDescargar.addEventListener("click", ()=>
+domtoimage.toBlob(document.getElementById("contenedor-meme")).then(blob=>
+   saveAs (blob, "meme-png")));
+
+
+
+botonTexto.addEventListener("click", ()=>{
+   aside.style.display = "block";
+   seccionTexto.classList.remove("oculto");
+ seccionImagen.classList.add("oculto");
+});
+
+//mostrar y cerrar panel aside// FUNCIONA//
+
+btnCerrar.addEventListener('click', ()=>{
+  aside.style.display ='none';
+});
+
+
+ //aside url// 
+ urlImagen.addEventListener("keyup", (e) => {
+  e.preventDefault();
+  const valueUrl = urlImagen.value;
+  memeImagen.style.backgroundImage = `url("${valueUrl}")`;
+  memeImagen.style.backgroundPosition = "center"
+});
+
+
+
+//background para claro y oscuro// funciona//
+
+const boton = document.getElementById("dark-theme");
+const confiUser = window.matchMedia("(prefers-color-scheme: light)");
+boton.addEventListener("click", ()=>{
+ console.log(confiUser.matches)
+ if (confiUser.matches){
+  document.body.classList.toggle("light-theme");
+ } else {
+  document.body.classList.toggle("dark-theme");
+
+ }
+});
 
 //FILTROS//
 const filtrosDeImagen = () =>{
   memeImagen.style.filter = `brightness(${brightnessFiltro.value}) opacity(${opacityFiltro.value}) contrast(${contrasteFiltro.value}%) blur(${blurFiltro.value}px) grayscale(${grayscaleFiltro.value}%) sepia(${sepiaFiltro.value}%) hue-rotate(${hueFiltro.value}deg) saturate(${saturateFiltro.value}%) invert(${invertFiltro.value})`;
 };
-
 
 brightnessFiltro.addEventListener("change",filtrosDeImagen);
 opacityFiltro.addEventListener("change", filtrosDeImagen);
@@ -76,89 +149,7 @@ filtrosDeImagen();
 
 
 
-//FONDO TRANSPARENTE// TERMINAR--
-
-fondoTransparente.addEventListener("click", ()=>{
-  textTop.classList.toggle("texto-transparente");
-  textBottom.classList.toggle("texto-transparente");
-});
-
-
-
-// Aside, texto e imagen// FUNCIONA=>
-
-
-botonImagen.addEventListener("click", ()=>{
-  aside.style.display ="block"; 
-  seccionImagen.classList.remove("oculto");
-seccionTexto.classList.add("oculto");
-
-});
-
-botonTexto.addEventListener("click", ()=>{
-   aside.style.display = "block";
-   seccionTexto.classList.remove("oculto");
- seccionImagen.classList.add("oculto");
-});
-
-
-//mostrar y cerrar panel aside// FUNCIONA//
-
-btnCerrar.addEventListener('click', ()=>{
-  aside.style.display ='none';
-});
-
- //aside url// //FUNCIONA//
-urlImagen.addEventListener("keyup", (e) => {
-  e.preventDefault();
-  const valueUrl = urlImagen.value;
-  memeImagen.style.backgroundImage = `url("${valueUrl}")`;
-  memeImagen.style.backgroundPosition = "center"
-});
-
-
-
-//boton descargar// FUNCIONA
-btnDescargar.addEventListener("click", ()=>
-domtoimage.toBlob(document.getElementById("contenedor-meme")).then(blob=>
-   saveAs (blob, "meme-png")));
-
-
-
-
-
-
-//ESTE CODIGO FUNCIONA CORRECTAMENTE//  modo oscuro y modo claro para boton=> (aca camnie el "click" por el onclick)
-
-modoClaro.addEventListener("click", ()=>{
-  modoOscuro.classList.remove("oculto");
-  modoClaro.classList.add("oculto");
-  });
-  
- modoClaro.addEventListener("click", ()=>{
-   modoOscuro.classList.remove("oculto");
-   modoClaro.classList.add("oculto");
-  
-});
-
-//background para claro y oscuro// funciona//
-
- const boton = document.getElementById("dark-theme");
- const confiUser = matchMedia("(prefers-color-scheme: light)");
- boton.addEventListener("click", ()=>{
-  console.log(confiUser.matches)
-  if (confiUser.matches){
-   document.body.classList.toggle("light-theme");
-  } else {
-   document.body.classList.toggle("dark-theme");
-
-  }
- });
-
-
-;
-
-//fondo del texto y color de texto// FUNCIONA
+//fondo del texto y color de texto// 
 
 textoColorIn.addEventListener("input", (event) =>{
   textTop.style.color = event.target.value;
@@ -170,23 +161,10 @@ fondoColorIn.addEventListener("input", (event)=>{
   textBottom.style.background = event.target.value;
 });
 
-
-//color FONDO caja meme // FUNCIONA//
+//color FONDO caja meme //
 colorModeInput.addEventListener("input", (event)=>{
   memeImagen.style.background = event.target.value;
 });
-
-;
-
-//boton ninguno, acalarar, oscurec// ??? no anda
-
-blendModeColor.addEventListener("change" , ()=>{
-  memeImagen.style.backgroundBlendMode = blendModeColor.value;
-});
-
-//texto top y bottom//
-
-
 
 
 //TEXTO SUPERIOR E INFERIOR//
@@ -202,9 +180,7 @@ inferiorr.addEventListener("keyup", ()=>{
   }
 });
 
-;
-//sin texto supeior e inferior. top y bottom//FUNCIONA
-
+//sin texto supeior e inferior. top y bottom//
 
 sinTextSuperior.addEventListener("change",()=>{
   if(sinTextSuperior.checked){
@@ -224,13 +200,7 @@ if(sinTextInferior.checked){
 }
 });
 
-
-
-
-
-
-
-// botones aling// FUNCIONA
+// botones aling// 
 
 btnAlignIzq.addEventListener("click", () =>{
   textTop.style.textAlign = "left";
@@ -248,22 +218,24 @@ btnAlignRight.addEventListener("click", ()=>{
 });
 
 
-//
+//fondo transparente//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+fondoTransparente.addEventListener("change", ()=>{
+  if(fondoTransparente.checked){
+    textTop.style.backgroundColor = "transparent";
+    textTop.style.position="absolute";
+    textTop.style.top ="150px";
+    textBottom.style.backgroundColor ="transparent";
+    textBottom.style.position = "absolute";
+    textBottom.style.top ="550px";
+    
+ }else {
+  textTop.style.backgroundColor = `${fondoColorIn.value}`;
+  textTop.style.position = "static";
+  textBottom.style.backgroundColor = `${fondoColorIn.value}`;
+  textBottom.style.position = "static";
+}
+});
 
 
 
